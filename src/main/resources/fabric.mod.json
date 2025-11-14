@@ -3,17 +3,18 @@
 	"id": "permanentsnow",
 	"version": "${version}",
 	"name": "PermanentSnow",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Change the weather permanently! (client side)",
 	"authors": [
-		"Me!"
+		"TheOfficialSeri"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/TheOfficialSeri/PermanentSnow",
+		"sources": "https://github.com/TheOfficialSeri/PermanentSnow",
+		"issues": "https://github.com/TheOfficialSeri/PermanentSnow/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/permanentsnow/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"main": [
 			"io.github.theofficialseri.permanentsnow.PermanentSnow"
@@ -24,11 +25,17 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.17.3",
-		"minecraft": "~1.21.8",
+		"minecraft": ">=1.21.8 <1.21.9-",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+	},
+	"custom": {
+		"mc-publish": {
+			"curseforge": "1384480",
+			"modrinth": "FYmaTnVI",
+			"loaders": ["fabric"]
+		}
 	}
 }

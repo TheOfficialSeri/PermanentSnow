@@ -1,0 +1,30 @@
+name: Publish mod
+on:
+  release:
+    types: [ created ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build mod JAR
+        run: ./gradlew build
+
+      - uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

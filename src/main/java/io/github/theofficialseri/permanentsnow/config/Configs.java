@@ -29,7 +29,7 @@ public class Configs {
             .build();
 
     @SerialEntry(comment = "Map any type of precipitation to another type of precipitation")
-    public static Map<Precipitation, Precipitation> precipitationToPrecipitation = new EnumMap<>(Precipitation.class);
+    public static Map<Precipitation, Precipitation> precipitationToPrecipitation = new EnumMap<>(Map.of(Precipitation.RAIN, Precipitation.SNOW));
 
     public static void initialize() {
         HANDLER.load();

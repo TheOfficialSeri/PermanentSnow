@@ -3,7 +3,7 @@
 	"package": "io.github.theofficialseri.permanentsnow.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"MixinBiome"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -16,6 +16,14 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven {
+		name = "Terraformers"
+		url = "https://maven.terraformersmc.com/"
+	}
+	maven {
+		name = "Xander Maven"
+		url = "https://maven.isxander.dev/releases"
+	}
 }
 
 dependencies {
@@ -26,14 +34,26 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+
+	modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
+	modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property "mod_version", mod_version
+	inputs.property "minecraft_version", minecraft_version
+	inputs.property "loader_version", loader_version
+	inputs.property "fabric_version", fabric_version
+	inputs.property "yacl_version", yacl_version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand([
+				"mod_version"      : inputs.properties.mod_version,
+				"minecraft_version": inputs.properties.minecraft_version,
+				"loader_version"   : inputs.properties.loader_version,
+				"fabric_version"   : inputs.properties.fabric_version,
+				"yacl_version"     : inputs.properties.yacl_version
+		])
 	}
 }
 
@@ -55,7 +75,7 @@ jar {
 	inputs.property "archivesName", project.base.archivesName
 
 	from("LICENSE") {
-		rename { "${it}_${inputs.properties.archivesName}"}
+		rename { "${it}_${inputs.properties.archivesName}" }
 	}
 }
 

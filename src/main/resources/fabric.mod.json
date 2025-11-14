@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "permanentsnow",
-	"version": "${version}",
+	"version": "${mod_version}",
 	"name": "PermanentSnow",
 	"description": "Change the weather permanently! (client side)",
 	"authors": [
@@ -16,26 +16,33 @@
 	"icon": "assets/permanentsnow/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"io.github.theofficialseri.permanentsnow.PermanentSnow"
+		],
+		"modmenu": [
+			"io.github.theofficialseri.permanentsnow.compat.ModMenuApiImpl"
 		]
 	},
 	"mixins": [
 		"permanentsnow.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.17.3",
-		"minecraft": ">=1.21.8 <1.21.9-",
+		"fabricloader": ">=${loader_version}",
+		"minecraft": "=${minecraft_version}",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": ">=${fabric_version}",
+		"yet_another_config_lib_v3": ">=${yacl_version}"
 	},
 	"suggests": {
+		"modmenu": "*"
 	},
 	"custom": {
 		"mc-publish": {
 			"curseforge": "1384480",
 			"modrinth": "FYmaTnVI",
-			"loaders": ["fabric"]
+			"loaders": [
+				"fabric"
+			]
 		}
 	}
 }

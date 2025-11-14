@@ -1,0 +1,7 @@
+{
+	"config.permanentsnow.title": "PermanentSnow Configuration",
+	"config.permanentsnow.precipitation": "Precipitation",
+	"config.permanentsnow.precipitation.none": "None",
+	"config.permanentsnow.precipitation.rain": "Rain",
+	"config.permanentsnow.precipitation.snow": "Snow"
+}

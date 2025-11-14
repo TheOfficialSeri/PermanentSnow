@@ -16,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome.Precipitation;
 
 import java.util.Arrays;
-import java.util.EnumMap;
 import java.util.Map;
 
 public class Configs {
@@ -29,7 +28,7 @@ public class Configs {
             .build();
 
     @SerialEntry(comment = "Map any type of precipitation to another type of precipitation")
-    public static Map<Precipitation, Precipitation> precipitationToPrecipitation = new EnumMap<>(Map.of(Precipitation.RAIN, Precipitation.SNOW));
+    public static Map<Precipitation, Precipitation> precipitationToPrecipitation = Map.of(Precipitation.RAIN, Precipitation.SNOW);
 
     public static void initialize() {
         HANDLER.load();

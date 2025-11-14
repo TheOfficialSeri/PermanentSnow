@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           java-version: '21'
-          distribution: 'temurin'
+          distribution: 'microsoft'
 
       - name: Build mod JAR
         run: ./gradlew build

@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.At;
 public abstract class MixinBiome {
     @ModifyReturnValue(at = @At("TAIL"), method = "getPrecipitationAt")
     private static Precipitation getPrecipitationAt(Precipitation original) {
-        return Configs.precipitationToPrecipitation.getOrDefault(original, original);
+        return Configs.overridePrecipitationTypes.getOrDefault(original, original);
     }
 }

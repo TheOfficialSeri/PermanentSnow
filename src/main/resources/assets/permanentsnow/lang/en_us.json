@@ -1,7 +1,18 @@
 {
 	"config.permanentsnow.title": "PermanentSnow Configuration",
 	"config.permanentsnow.precipitation": "Precipitation",
-	"config.permanentsnow.precipitation.none": "None",
-	"config.permanentsnow.precipitation.rain": "Rain",
-	"config.permanentsnow.precipitation.snow": "Snow"
+	"config.permanentsnow.precipitation.group.types": "Precipitation types",
+	"config.permanentsnow.precipitation.group.types.description": "Override precipitation types to render as other precipitation types.",
+	"config.permanentsnow.precipitation.group.types.option.none": "None",
+	"config.permanentsnow.precipitation.group.types.option.none.description": "What precipitation should be rendered when there would be none?",
+	"config.permanentsnow.precipitation.group.types.option.rain": "Rain",
+	"config.permanentsnow.precipitation.group.types.option.rain.description": "What precipitation should be rendered when it would rain?",
+	"config.permanentsnow.precipitation.group.types.option.snow": "Snow",
+	"config.permanentsnow.precipitation.group.types.option.snow.description": "What precipitation should be rendered when it would snow?",
+	"config.permanentsnow.precipitation.group.level": "Precipitation level",
+	"config.permanentsnow.precipitation.group.level.description": "Override the level of precipitation to render.",
+	"config.permanentsnow.precipitation.group.level.option.override": "Override the level of precipitation",
+	"config.permanentsnow.precipitation.group.level.option.override.description": "Should the level of precipitation to render be overridden?",
+	"config.permanentsnow.precipitation.group.level.option.level": "Level of precipitation",
+	"config.permanentsnow.precipitation.group.level.option.level.description": "The higher the level of precipitation, the more intense the precipitation will be."
 }

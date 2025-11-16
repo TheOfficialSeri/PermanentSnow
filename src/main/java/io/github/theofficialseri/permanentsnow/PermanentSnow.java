@@ -18,6 +18,6 @@ public class PermanentSnow implements ClientModInitializer {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
-        Configs.initialize();
+        Configs.load();
     }
 }

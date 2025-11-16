@@ -20,6 +20,9 @@ jobs:
           java-version: '21'
           distribution: 'microsoft'
 
+      - name: Ensure gradlew is executable
+        run: chmod +x ./gradlew
+
       - name: Build mod JAR
         run: ./gradlew build
 

@@ -30,5 +30,4 @@ Make sure you also override the level of precipitation as in some cases it might
 If you add a custom types of precipitation client side, make sure to set the following translations:
 
 - `config.permanentsnow.precipitation.group.types.option.<custom precipitation type>`
-
 - `config.permanentsnow.precipitation.group.types.option.<custom precipitation type>.description`

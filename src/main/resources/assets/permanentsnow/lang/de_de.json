@@ -1,7 +1,18 @@
 {
 	"config.permanentsnow.title": "PermanentSnow Konfiguration",
 	"config.permanentsnow.precipitation": "Niederschlag",
-	"config.permanentsnow.precipitation.none": "Keiner",
-	"config.permanentsnow.precipitation.rain": "Regen",
-	"config.permanentsnow.precipitation.snow": "Schnee"
+	"config.permanentsnow.precipitation.group.types": "Niederschlagstypen",
+	"config.permanentsnow.precipitation.group.types.description": "Überschreibe Niederschlagstypen als andere Niederschlagstypen zu rendern.",
+	"config.permanentsnow.precipitation.group.types.option.none": "Keiner",
+	"config.permanentsnow.precipitation.group.types.option.none.description": "Welcher Niederschlag soll gerendert werden, wenn es keinen geben würde?",
+	"config.permanentsnow.precipitation.group.types.option.rain": "Regen",
+	"config.permanentsnow.precipitation.group.types.option.rain.description": "Welcher Niederschlag soll gerendert werden, wenn es regnen würde?",
+	"config.permanentsnow.precipitation.group.types.option.snow": "Schnee",
+	"config.permanentsnow.precipitation.group.types.option.snow.description": "Welcher Niederschlag soll gerendert werden, wenn es schneien würde?",
+	"config.permanentsnow.precipitation.group.level": "Niederschlagsstärke",
+	"config.permanentsnow.precipitation.group.level.description": "Überschreibe die Stärke des zu rendernden Niederschlags.",
+	"config.permanentsnow.precipitation.group.level.option.override": "Überschreibung der Niederschlagsstärke",
+	"config.permanentsnow.precipitation.group.level.option.override.description": "Soll die zu rendernde Niederschlagstärke überschrieben werden?",
+	"config.permanentsnow.precipitation.group.level.option.level": "Niederschlagsstärke",
+	"config.permanentsnow.precipitation.group.level.option.level.description": "Je höher die Niederschlagstärke, desto intensiver wird der Niederschlag sein."
 }

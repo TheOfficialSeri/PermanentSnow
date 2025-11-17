@@ -49,7 +49,7 @@ public class Configs {
                         .build());
         precipitationLevelGroupBuilder.option(Option.<Boolean>createBuilder()
                         .name(Component.translatable("config.permanentsnow.precipitation.group.level.option.override"))
-                        .binding(overridePrecipitationLevel, () -> overridePrecipitationLevel, value -> overridePrecipitationLevel = value)
+                        .binding(false, () -> overridePrecipitationLevel, value -> overridePrecipitationLevel = value)
                         .controller(BooleanControllerBuilder::create)
                         .build())
                 .option(Option.<Float>createBuilder()
@@ -57,7 +57,7 @@ public class Configs {
                         .description(OptionDescription.createBuilder()
                                 .text(Component.translatable("config.permanentsnow.precipitation.group.level.option.level.description"))
                                 .build())
-                        .binding(precipitationLevel, () -> precipitationLevel, value -> precipitationLevel = value)
+                        .binding(1.0f, () -> precipitationLevel, value -> precipitationLevel = value)
                         .controller(option -> FloatSliderControllerBuilder.create(option)
                                 .range(0.0f, 1.0f)
                                 .step(0.01f)

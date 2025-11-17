@@ -41,18 +41,18 @@ dependencies {
 
 processResources {
 	inputs.property "mod_version", mod_version
-	inputs.property "minecraft_version", minecraft_version
+	inputs.property "minecraft_version_dependency", minecraft_version_dependency
 	inputs.property "loader_version", loader_version
 	inputs.property "fabric_version", fabric_version
 	inputs.property "yacl_version", yacl_version
 
 	filesMatching("fabric.mod.json") {
 		expand([
-				"mod_version"      : inputs.properties.mod_version,
-				"minecraft_version": inputs.properties.minecraft_version,
-				"loader_version"   : inputs.properties.loader_version,
-				"fabric_version"   : inputs.properties.fabric_version,
-				"yacl_version"     : inputs.properties.yacl_version
+				"mod_version"                 : inputs.properties.mod_version,
+				"minecraft_version_dependency": inputs.properties.minecraft_version_dependency,
+				"loader_version"              : inputs.properties.loader_version,
+				"fabric_version"              : inputs.properties.fabric_version,
+				"yacl_version"                : inputs.properties.yacl_version
 		])
 	}
 }

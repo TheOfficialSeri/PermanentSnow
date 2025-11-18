@@ -42,6 +42,11 @@
 			"modrinth": "FYmaTnVI",
 			"loaders": [
 				"fabric"
+			],
+			"dependencies": [
+				"fabric-api(required){modrinth:P7dR8mSH}{curseforge:306612}",
+				"yet_another_config_lib_v3(required){modrinth:1eAoo2KR}{curseforge:667299}",
+				"modmenu(optional){modrinth:mOgUt4GM}{curseforge:308702}"
 			]
 		}
 	}

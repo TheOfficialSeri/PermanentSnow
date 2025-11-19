@@ -56,6 +56,9 @@ public class Configs {
                         .build());
         precipitationLevelGroupBuilder.option(Option.<Boolean>createBuilder()
                         .name(Component.translatable("config.permanentsnow.precipitation.group.level.option.override"))
+                        .description(OptionDescription.createBuilder()
+                                .text(Component.translatable("config.permanentsnow.precipitation.group.level.option.override.description"))
+                                .build())
                         .binding(false, () -> overridePrecipitationLevel, value -> overridePrecipitationLevel = value)
                         .controller(BooleanControllerBuilder::create)
                         .build())

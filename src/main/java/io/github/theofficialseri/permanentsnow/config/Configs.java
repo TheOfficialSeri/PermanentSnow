@@ -18,6 +18,7 @@ import net.minecraft.world.level.biome.Biome.Precipitation;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.function.Function;
 
 public class Configs {
     private static final ConfigClassHandler<Configs> HANDLER = ConfigClassHandler.createBuilder(Configs.class)
@@ -28,6 +29,9 @@ public class Configs {
                     .build())
             .build();
 
+    public static final Function<Float, Component> TWO_DECIMAL_PLACES_FORMATTER = value -> Component.literal(String.format("%,.2f", value)
+            .replaceAll("[\u00a0\u202F]", " "));
+
     @SerialEntry(comment = "Override precipitation types to render as other precipitation types.")
     public static Map<Precipitation, Precipitation> overridePrecipitationTypes = new EnumMap<>(Precipitation.class);
 
@@ -36,6 +40,9 @@ public class Configs {
 
     @SerialEntry(comment = "The higher the level of precipitation, the more intense the precipitation will be.")
     public static float precipitationLevel = 1.0f;
+
+    @SerialEntry(comment = "The opacity of the powder snow overlay rendered by this mod.")
+    public static float powderSnowOverlayOpacity = 0.0f;
 
     public static void load() {
         HANDLER.load();
@@ -61,7 +68,7 @@ public class Configs {
                         .controller(option -> FloatSliderControllerBuilder.create(option)
                                 .range(0.0f, 1.0f)
                                 .step(0.01f)
-                                .formatValue(value -> Component.literal(String.format("%,.2f", value).replaceAll("[  ]", " "))))
+                                .formatValue(TWO_DECIMAL_PLACES_FORMATTER::apply))
                         .build());
 
         Builder precipitationTypesGroupBuilder = OptionGroup.createBuilder()
@@ -89,12 +96,33 @@ public class Configs {
                                         "config.permanentsnow.precipitation.group.types.option." + value.getSerializedName())))
                         .build()));
 
+        Builder powderSnowOverlayGroupBuilder = OptionGroup.createBuilder()
+                .name(Component.translatable("config.permanentsnow.overlay.group.powder_snow"))
+                .description(OptionDescription.createBuilder()
+                        .text(Component.translatable("config.permanentsnow.overlay.group.powder_snow.description"))
+                        .build());
+        powderSnowOverlayGroupBuilder.option(Option.<Float>createBuilder()
+                .name(Component.translatable("config.permanentsnow.overlay.group.powder_snow.option.opacity"))
+                .description(OptionDescription.createBuilder()
+                        .text(Component.translatable("config.permanentsnow.overlay.group.powder_snow.option.opacity.description"))
+                        .build())
+                .binding(0.0f, () -> powderSnowOverlayOpacity, value -> powderSnowOverlayOpacity = value)
+                .controller(option -> FloatSliderControllerBuilder.create(option)
+                        .range(0.0f, 1.0f)
+                        .step(0.01f)
+                        .formatValue(TWO_DECIMAL_PLACES_FORMATTER::apply))
+                .build());
+
         return YetAnotherConfigLib.createBuilder()
                 .title(Component.translatable("config.permanentsnow.title"))
                 .category(ConfigCategory.createBuilder()
                         .name(Component.translatable("config.permanentsnow.precipitation"))
                         .group(precipitationLevelGroupBuilder.build())
                         .group(precipitationTypesGroupBuilder.build())
+                        .build())
+                .category(ConfigCategory.createBuilder()
+                        .name(Component.translatable("config.permanentsnow.overlay"))
+                        .group(powderSnowOverlayGroupBuilder.build())
                         .build())
                 .save(HANDLER::save)
                 .build()

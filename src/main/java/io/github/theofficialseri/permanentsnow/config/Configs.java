@@ -87,10 +87,8 @@ public class Configs {
                                         "config.permanentsnow.precipitation.group.types.option." + precipitation.getSerializedName() + ".description"))
                                 .build())
                         .binding(
-                                precipitation == Precipitation.RAIN ? Precipitation.SNOW : precipitation,
-                                () -> overridePrecipitationTypes.getOrDefault(precipitation,
-                                        precipitation == Precipitation.RAIN ? Precipitation.SNOW : precipitation
-                                ),
+                                precipitation,
+                                () -> overridePrecipitationTypes.getOrDefault(precipitation, precipitation),
                                 value -> overridePrecipitationTypes.put(precipitation, value)
                         )
                         .controller(option -> EnumControllerBuilder.create(option)

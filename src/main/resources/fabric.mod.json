@@ -3,7 +3,7 @@
 	"id": "permanentsnow",
 	"version": "${mod_version}",
 	"name": "PermanentSnow",
-	"description": "Change the weather permanently! (client side)",
+	"description": "Change the weather permanently on the client side! Let it snow on every server!",
 	"authors": [
 		"TheOfficialSeri"
 	],

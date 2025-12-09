@@ -12,7 +12,7 @@ import dev.isxander.yacl3.platform.YACLPlatform;
 import io.github.theofficialseri.permanentsnow.PermanentSnow;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.biome.Biome.Precipitation;
 
 import java.util.Arrays;
@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 public class Configs {
     private static final ConfigClassHandler<Configs> HANDLER = ConfigClassHandler.createBuilder(Configs.class)
-            .id(ResourceLocation.fromNamespaceAndPath(PermanentSnow.MOD_ID, "config"))
+            .id(Identifier.fromNamespaceAndPath(PermanentSnow.MOD_ID, "config"))
             .serializer(config -> GsonConfigSerializerBuilder.create(config)
                     .setPath(YACLPlatform.getConfigDir().resolve("permanentsnow.json5"))
                     .setJson5(true)
